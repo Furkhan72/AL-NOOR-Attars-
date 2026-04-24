@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AL-NOOR | Elite Parfumerie</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Plus+Jakarta+Sans:wght@200;300;500&display=swap" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+ <script src="script.js"></script> 
+</head>
+
+<body>
+
+<section class="h-[80vh] flex flex-col justify-center items-center text-center px-6">
+<div class="fade-in">
+<span class="text-gold tracking-[0.8em] text-[10px] uppercase mb-4 block">
+    Established in Tradition</span>
+<h2 class="serif text-5xl md:text-8xl mb-6">AL-NOOR <br>
+    <span class="italic font-light text-gray-500">
+        Oudh & Essence</span>
+    </h2>
+<p class="text-gray-400 max-w-lg mx-auto mb-10 text-sm font-light leading-relaxed">
+Experience the soul of the Orient. Our attars are meticulously aged, 
+alcohol-free, and designed to leave a lasting legacy.
+</p>
+<a href="#shop" class="bg-gold-gradient text-black px-12 py-4 text-[10px] font-bold 
+   uppercase tracking-widest hover:brightness-110 transition">
+    Discover The Vault</a>
+</div>
+</section>
+
+
+<section id="shop" class="py-20 px-6 md:px-20">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+<div>
+<h3 class="serif text-4xl mb-2">The <span class="gold-text">Attar</span> Collection</h3>
+<p class="text-gray-500 text-xs uppercase tracking-widest">
+    6ml Concentrated Oil Extractions</p>
+</div>
+<div class="h-[1px] bg-white/10 flex-grow mx-8 hidden md:block"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="product-grid">
+</div>
+</section>
+
+
+
+<div class="bg-ambient"></div>
+
+<nav class="fixed top-0 w-full flex justify-between items-center 
+px-8 md:px-16 py-8 z-50 transition-all duration-700" id="navbar">
+<div class="flex items-center gap-3">
+    <img src="logo.png" alt="AL NOOR Logo" class="h-10 w-auto">
+    <span class="serif text-xl tracking-widest text-[#d4af37] hidden md:block">
+        AL-NOOR
+    </span>
+</div>
+<div class="flex items-center gap-8">
+<button onclick="toggleCart()" class="relative group">
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" 
+fill="none" stroke="#d4af37" stroke-width="1.5" stroke-linecap="round" 
+stroke-linejoin="round" class="group-hover:scale-110 transition-transform">
+<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/>
+<path d="M16 10a4 4 0 0 1-8 0"/></svg>
+<span id="cart-count" class="absolute -top-2 -right-2 bg-[#d4af37] text-[#040d08] text-[9px] 
+font-bold w-4 h-4 flex items-center justify-center rounded-full">0</span></button>
+</div>
+</nav>
+
+
+<section id="reviews" class="py-24 bg-white/[0.01] px-6 md:px-20 border-y border-white/5">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20"><div>
+<h3 class="serif text-4xl mb-8">Voices of 
+    <span class="gold-text italic">Patrons</span></h3>
+                
+<div id="reviews-list" class="space-y-6 max-h-[400px] overflow-y-auto pr-4 no-scrollbar">
+<div class="product-card p-6 rounded-lg">
+<div class="flex text-gold text-[10px] mb-2">★★★★★</div>
+<p class="text-gray-400 text-sm italic mb-4">
+    "The Sultan-al-Oudh is truly majestic. It lasts nearly 24 hours on my skin."</p>
+<p class="text-[10px] uppercase tracking-widest font-bold">— Ahmed R.</p>
+</div>
+</div>
+</div>
+
+<div class="bg-zinc-900/40 p-8 rounded-xl border border-white/10">
+<h4 class="serif text-xl mb-6 gold-text">Leave Your Mark</h4>
+<form id="reviewForm" onsubmit="addReview(event)" class="space-y-4">
+<input type="text" id="revName" placeholder="Full Name" 
+        required class="w-full p-4 rounded text-sm">
+<select id="revStars" class="w-full p-4 rounded text-sm">
+<option value="5">5 Stars (Exquisite)</option>
+<option value="4">4 Stars (Excellent)</option>
+<option value="3">3 Stars (Good)</option>
+</select>
+                    
+
+<textarea id="revMsg" placeholder="Describe the essence..." rows="4" 
+required class="w-full p-4 rounded text-sm"></textarea>
+<button type="submit" style="color: white !important;border: 5PX solid BLACK;"="bg-gold-gradient text-black w-full py-4 text-[10px] 
+font-bold uppercase tracking-widest ">Submit Review</button>
+</form>
+</div>
+</div>
+</section>
+<!-- Floating Social Buttons -->
+<div style="position:fixed; bottom:20px; right:20px; z-index:999; display:flex; flex-direction:column; gap:12px;">
+
+  <!-- WhatsApp -->
+  <a href="https://chat.whatsapp.com/LPrza2Xe2ep9LVN5YQUlRE" target="_blank"
+     style="background:#25D366; width:55px; height:55px; border-radius:50%;
+     display:flex; align-items:center; justify-content:center; box-shadow:0 5px 15px rgba(0,0,0,0.3);">
+
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="28">
+  </a>
+
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/alno.or628?igsh=MXRjbm9lbTJubWczMg==" target="_blank"
+     style="background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);
+     width:55px; height:55px; border-radius:50%;
+     display:flex; align-items:center; justify-content:center; box-shadow:0 5px 15px rgba(0,0,0,0.3);">
+
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" width="28">
+  </a>
+
+</div>
+
+
+<footer class="py-32 border-t border-white/5 text-center bg-[#030a06]">
+    <div class="serif text-2xl text-[#d4af37] mb-6 opacity-50 tracking-widest">AL-NOOR</div>
+    <div class="flex justify-center gap-8 mb-10 opacity-40 text-[10px] tracking-[0.3em] uppercase">
+        <span>Authenticity</span>
+        <span>Quality</span>
+        <span>Tradition</span>
+    </div>
+    <p class="text-[9px] tracking-[5px] uppercase opacity-20">© 2026 Al Sara Luxury</p>
+</footer>
+
+
+<div id="cart" class="fixed right-0 top-0 w-full md:w-[450px] h-full 
+bg-gradient-to-b from-[#040d08]/95 to-[#020704]/95 
+backdrop-blur-xl z-[100] 
+transform translate-x-full transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] 
+p-10 border-l border-[#d4af37]/20 shadow-[0_0_60px_rgba(212,175,55,0.1)]">
+
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-12 border-b border-[#d4af37]/10 pb-6">
+        <h2 class="serif text-3xl tracking-[0.2em] text-[#d4af37]">
+            Your Bag
+        </h2>
+
+        <button onclick="toggleCart()" 
+        class="text-[10px] uppercase tracking-widest opacity-50 hover:opacity-100 
+        hover:text-[#d4af37] transition-all duration-300">
+            Close ✕
+        </button>
+    </div>
+
+    <!-- Cart Items -->
+    <div id="cart-items" 
+    class="space-y-8 overflow-y-auto max-h-[58vh] pr-3 custom-scroll">
+
+        <!-- Example Item Design -->
+        <!-- Use this style in JS rendering -->
+        <!--
+        <div class="flex justify-between items-center border-b border-[#d4af37]/10 pb-4">
+            <div>
+                <h4 class="text-sm tracking-wider text-white">Oudh Royal</h4>
+                <p class="text-[10px] opacity-40">Qty: 1</p>
+            </div>
+            <span class="text-[#d4af37] text-sm">₹2499</span>
+        </div>
+        -->
+
+    </div>
+
+    
+
+    <!-- Footer -->
+    <div class="absolute bottom-10 left-0 w-full px-10">
+
+        <div class="flex justify-between items-center mb-6">
+            <span class="text-xs tracking-widest opacity-40 uppercase">Total</span>
+            <span class="text-2xl text-[#d4af37] serif tracking-wider">
+                ₹<span id="total-price">0</span>
+            </span>
+        </div>
+
+        <!-- Checkout Button -->
+        <button onclick="checkout()" 
+        class="relative w-full py-4 uppercase tracking-[0.35em] text-[10px] font-bold 
+        bg-gradient-to-r from-[#d4af37] via-[#f5e6a8] to-[#d4af37] 
+        text-[#040d08] rounded-md overflow-hidden group">
+
+            <span class="relative z-10">Secure via WhatsApp</span>
+
+            <!-- Shine Effect -->
+            <span class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 
+            transition duration-500 blur-md"></span>
+        </button>
+
+    </div>
+</div>
+
+</body>
+</html> 

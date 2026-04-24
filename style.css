@@ -1,0 +1,142 @@
+:root { 
+        --gold: #d4af37; 
+        --gold-glow: rgba(212, 175, 55, 0.2);
+        /* New Deep Emerald Palette */
+        --deep-forest: #040d08; 
+        --midnight-green: #06140d;
+    }
+
+    body {
+        /* Deep radial gradient for a dimensional feel */
+        background: radial-gradient(circle at top, #0a1f15 0%, var(--deep-forest) 100%);
+        background-attachment: fixed;
+        color: #fff;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        overflow-x: hidden;
+    }
+
+    /* Ambient Background Light */
+    .bg-ambient {
+        position: fixed;
+        width: 60vw;
+        height: 60vw;
+        background: radial-gradient(circle, rgba(212, 175, 55, 0.03) 0%, transparent 70%);
+        top: -10%;
+        left: -10%;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .serif { font-family: 'Cinzel', serif; }
+
+    /* Hero Section with Parallax Image Overlay */
+    .hero-visual {
+        height: 100vh;
+        background: linear-gradient(to bottom, rgba(4, 13, 8, 0.4), var(--deep-forest)),
+                    url('https://images.unsplash.com/photo-1615485290382-441e4d019cb0?auto=format&fit=crop&q=80');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-content {
+        animation: fadeInUp 1.8s cubic-bezier(0.19, 1, 0.22, 1);
+        z-index: 2;
+    }
+
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(50px); filter: blur(15px); }
+        to { opacity: 1; transform: translateY(0); filter: blur(0); }
+    }
+
+    /* Floating Gold Dust */
+    .gold-dust {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(circle, var(--gold) 0.5px, transparent 0.5px);
+        background-size: 80px 80px;
+        opacity: 0.15;
+        animation: drift 30s linear infinite;
+    }
+
+    @keyframes drift {
+        from { transform: translateY(0) rotate(0deg); }
+        to { transform: translateY(-100px) rotate(5deg); }
+    }
+
+    /* Refined Product Cards */
+    .premium-card {
+        background: rgba(255, 255, 255, 0.01);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(212, 175, 55, 0.08);
+        transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .premium-card:hover {
+        background: rgba(212, 175, 55, 0.03);
+        border-color: var(--gold);
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px var(--gold-glow);
+    }
+
+    .btn-buy {
+        border: 1px solid var(--gold);
+        color: var(--gold);
+        transition: 0.5s;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 9px;
+    }
+
+    .btn-buy:hover {
+        background: var(--gold);
+        color: var(--deep-forest);
+        box-shadow: 0 0 20px var(--gold);
+    }
+
+    /* Section Divider */
+    .ornament {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        opacity: 0.8;
+    }
+    .line { height: 1px; width: 40px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+
+    .reveal { opacity: 0; transform: translateY(30px); transition: 1.2s all ease; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+
+    /* Floating Navigation Glass */
+    nav.scrolled {
+        background: rgba(4, 13, 8, 0.8);
+        backdrop-filter: blur(15px);
+        border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    }
+
+
+    .custom-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+    background: linear-gradient(#d4af37, #f5e6a8);
+    border-radius: 10px;
+}
+
+
+        input, textarea, select {
+            background: rgba(255,255,255,0.03) !important;
+            border: 1px solid rgba(255,255,255,0.1) !important;
+            color: white !important;
+            transition: 0.3s;
+        }
+        input:focus, textarea:focus { border-color: var(--gold) !important; outline: none; }
